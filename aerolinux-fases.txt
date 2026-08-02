@@ -1,0 +1,123 @@
+Aero Linux - Plan de Fases
+===========================
+
+Fase 1: Base + Dependencias Esenciales
+----------------------------------------
+Estado: En progreso
+
+Paquetes incluidos:
+- Kernel y firmware: linux-image-amd64, firmware-linux, firmware-linux-nonfree
+- Base del sistema: sudo, network-manager, network-manager-gnome, xserver-xorg
+- Utilidades: wget, curl, nano, fastfetch, htop, zip, unzip, tar, xz-utils
+- Multimedia codecs: vlc, ffmpeg, gstreamer1.0-plugins-{base,good,bad,ugly}, gstreamer1.0-libav
+- Audio: pipewire-audio, pavucontrol, alsa-utils
+- Red: network-manager-applet
+- Escritorio XFCE: xfce4, xfce4-terminal, xfce4-power-manager, xfce4-screenshooter,
+  xfce4-whiskermenu-plugin, thunar, thunar-archive-plugin, thunar-volman,
+  thunar-media-tags-plugin, mousepad, ristretto, gvfs, gvfs-backends,
+  xfce4-clipman-plugin
+- Gestor de sesion: lightdm, lightdm-gtk-greeter
+- Fuentes: fonts-dejavu, fonts-noto, fonts-liberation
+
+Nota: No incluye gestores de paquetes graficos propios todavia.
+Eso se agrega en fases posteriores (Fase 5 AeroStore).
+
+Fase 2: Identidad Visual
+-------------------------
+- Tema GTK azul/blanco (paleta estilo Fedora/Anaconda: #3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
+- CSS del tema para XFCE
+- Wallpapers propios (cielo, nubes, aurora en tonos azules)
+- Iconos propios estilo Aero
+- Cursor personalizado
+- Configuracion base de XFCE aplicada por defecto (paneles, dock, atajos)
+
+Fase 3: Calamares - Instalador Grafico
+----------------------------------------
+- Calamares como instalador (reemplaza debian-installer)
+- Branding de Calamares con paleta azul/blanca de Aero Linux
+- Pantalla de bienvenida con logo Aero
+- Seleccion de disco, particionado, usuario, idioma
+- Tema visual consistente con el resto de Aero Linux
+
+Fase 4: Aero Welcome
+--------------------
+- Se ejecuta al primer inicio despues de la instalacion
+- Instalar software recomendado
+- Activar Flatpak y configurar Flathub
+- Instalar codecs de multimedia
+- Cambiar tema a Aero (aplicar tema GTK azul/blanco)
+- Enlaces a documentacion
+- Bienvenida interactiva con presentacion de Aero Linux
+
+Fase 5: AeroStore
+-----------------
+- Centro de instalacion de aplicaciones
+- Soporte para paquetes .deb y Flatpak
+- Categorias y busqueda
+- Actualizaciones del sistema integradas
+- Interfaz con diseño azul/blanco consistente
+- Backend: PackageKit + Flatpak
+- Nota: al llegar esta fase, se oculta o remueve Synaptic del menu
+  para no confundir al usuario con multiples gestores de software
+
+Fase 6: Aero Center
+-------------------
+- Panel de control propio
+- Gestion de usuarios
+- Configuracion de apariencia (tema, iconos, cursor, wallpaper)
+- Firewall (UFW/firewalld)
+- Actualizaciones del sistema
+- Informacion del sistema (hardware, OS, IP)
+- Controladores (gestion de drivers)
+
+Fase 7: ISO Final Beta + Pruebas
+---------------------------------
+- ISO booteable completa con todas las fases anteriores
+- Pruebas en QEMU y VirtualBox
+- Pruebas de instalacion en maquina real (USB)
+- Correccion de errores y ajustes finales
+- Generacion de checksums (md5sum, sha256sum)
+
+Fase 8: Lanzamiento v1.0
+-------------------------
+- ISO final estable
+- Documentacion del proyecto
+- Repositorio del codigo fuente
+- Primer release publico
+- Plan de mantenimiento y actualizaciones
+
+Ecosistema futuro (Fase 9+)
+----------------------------
+- Aero Cleaner: limpieza de caché, paquetes huérfanos, espacio libre
+- Aero Backup: copias de seguridad y restauracion
+- Aero Monitor: monitor de recursos (CPU, RAM, disco, red, temperatura)
+- Aero Hub: portal con documentacion, foro, reporte de errores, comunidad
+- Repositorio propio Aero Linux para distribuir aplicaciones
+- ISOs de ediciones adicionales (Aero Linux KDE, Aero Linux GNOME)
+
+Filosofia
+---------
+- Base Debian Stable (trixie/bookworm)
+- Escritorio XFCE (ligero, eficiente, personalizable)
+- Paleta azul/blanco estilo Fedora/Anaconda (#3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
+- Diseño limpio, moderno y enfocado en nuevos usuarios
+- Control total: cada paquete y cada componente es elegido por el equipo de Aero Linux
+- AeroStore y Aero Center como identidad propia del ecosistema
+
+Comandos utiles para la construccion
+-------------------------------------
+Dentro del contenedor Docker:
+  lb config --distribution trixie --archive-areas "main contrib non-free non-free-firmware"
+  lb build
+
+Para limitar a 3 nucleos (opcional):
+  lb clean
+  lb config --distribution trixie --archive-areas "main contrib non-free non-free-firmware"
+  lb build
+
+Copiar la ISO al host (desde el contenedor):
+  cp /aero-linux/live-image-amd64.hybrid.iso /aero-linux/
+
+Desde el host Arch:
+  ls -lh ~/aero-linux/live-image-amd64.hybrid.iso
+  qemu-system-x86_64 -enable-kvm -m 2048 -cdrom ~/aero-linux/live-image-amd64.hybrid.iso
