@@ -1,0 +1,65 @@
+# Aero Linux - Fase 1: Base + dependencias esenciales
+
+# --- Kernel y firmware ---
+linux-image-amd64
+firmware-linux
+firmware-linux-nonfree
+
+# --- Base del sistema ---
+sudo
+network-manager
+network-manager-gnome
+xserver-xorg
+
+# --- Utilidades esenciales ---
+wget
+curl
+nano
+fastfetch
+htop
+zip
+unzip
+tar
+xz-utils
+
+# --- Multimedia codecs ---
+vlc
+ffmpeg
+gstreamer1.0-plugins-base
+gstreamer1.0-plugins-good
+gstreamer1.0-plugins-bad
+gstreamer1.0-plugins-ugly
+gstreamer1.0-libav
+
+# --- Audio ---
+pipewire-audio
+pavucontrol
+alsa-utils
+
+# --- Red ---
+network-manager-applet
+
+# --- Escritorio XFCE ---
+xfce4
+xfce4-terminal
+xfce4-power-manager
+xfce4-screenshooter
+xfce4-whiskermenu-plugin
+thunar
+thunar-archive-plugin
+thunar-volman
+thunar-media-tags-plugin
+mousepad
+ristretto
+gvfs
+gvfs-backends
+xfce4-clipman-plugin
+
+# --- Gestor de sesion ---
+lightdm
+lightdm-gtk-greeter
+
+# --- Fuentes ---
+fonts-dejavu
+fonts-noto
+fonts-liberation

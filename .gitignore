@@ -1,0 +1,27 @@
+# Build artifacts
+chroot/
+cache/
+binary/
+build/
+.local*
+.venv/
+*.iso
+*.iso.*
+binary.modified_timestamps
+chroot.files
+chroot.packages.*
+live-image-amd64.*
+.build/
+auto/
+local/
+
+# Temporales
+*.lock
+*.log
+*.swp
+*.tmp
+._*
+.DS_Store
+
+# Sistema
+Thumbs.db
