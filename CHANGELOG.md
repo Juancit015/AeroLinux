@@ -5,11 +5,11 @@ Todos los cambios notables de este proyecto se documentan aquí.
 ## [Unreleased]
 
 ### Added
-- Initial project structure
-- Fase 1: Base Debian Trixie + XFCE mínimo
+- Fase 1: Base Debian Trixie + XFCE mínimo ✅
+- Dependencias esenciales (fastfetch, wget, nano, codecs, etc.)
+- Configuración de live-build (trixie, amd64)
 - Lista de paquetes base (ver `aerolinux-fases.txt`)
-- Configuración de live-build
-- README.md y CHANGELOG.md (este archivo)
+- README.md y CHANGELOG.md
 - aerolinux-fases.txt con roadmap completo
 - .gitignore (excluye ISOs, chroots, caché)
 

@@ -13,7 +13,7 @@ Distribución Linux personalizada basada en **Debian Trixie** con escritorio **X
 
 | Fase | Estado | Descripción |
 |---|---|---|
-| 1 | En progreso | Base + dependencias esenciales |
+| 1 | ✅ Terminada | Base + dependencias esenciales |
 | 2 | Pendiente | Tema GTK azul/blanco |
 | 3 | Pendiente | Instalador Calamares |
 | 4 | Pendiente | Aero Welcome |
