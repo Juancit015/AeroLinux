@@ -3,7 +3,7 @@ Aero Linux - Plan de Fases
 
 Fase 1: Base + Dependencias Esenciales
 ----------------------------------------
-Estado: En progreso
+Estado: Completada
 
 Paquetes incluidos:
 - Kernel y firmware: linux-image-amd64, firmware-linux, firmware-linux-nonfree
@@ -24,12 +24,19 @@ Eso se agrega en fases posteriores (Fase 5 AeroStore).
 
 Fase 2: Identidad Visual
 -------------------------
-- Tema GTK azul/blanco (paleta estilo Fedora/Anaconda: #3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
-- CSS del tema para XFCE
-- Wallpapers propios (cielo, nubes, aurora en tonos azules)
+Estado: Completada
+
+- Tema GTK "Aero" creado desde cero (GTK3) con paleta azul/blanco (#3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
+- Menus con diseno heredado de Adwaita-dark (padding compacto, hover azul oscuro, menubar con subrayado)
+- CSS del tema para XFCE (panel, whisker, widgets)
+- Wallpapers oficiales en /usr/share/backgrounds/aero (estilo Fluent: edificios y montanas)
+- Iconos: elementary (por defecto)
+- Tema de ventanas: Default (xfwm4)
+- Configuracion base de XFCE aplicada por defecto via /etc/skel (settings.ini + xsettings.xml)
+
+Pendiente (opcional, fases futuras):
 - Iconos propios estilo Aero
 - Cursor personalizado
-- Configuracion base de XFCE aplicada por defecto (paneles, dock, atajos)
 
 Fase 3: Calamares - Instalador Grafico
 ----------------------------------------

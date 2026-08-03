@@ -1,6 +1,7 @@
 /* XPM */
-static char *bottom-inactive[] = {
-"1 1 1 1",
-"0 c #B0B0B0",
-"0",
+static char *bottom_inactive[] = {
+"1 2 1 1",
+".	c #B0B0B0",
+".",
+"."
 };

@@ -1,6 +1,6 @@
 /* XPM */
-static char *right-active[] = {
-"1 1 1 1",
-"0 c #3C6EB4",
-"0",
+static char *right_active[] = {
+"2 1 1 1",
+".	c #223A61",
+".."
 };

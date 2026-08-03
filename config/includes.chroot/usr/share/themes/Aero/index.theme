@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=Aero
 Name[es]=Aero
-Comment=Aero Linux Theme
-Comment[es]=Tema de Aero Linux
+Comment=Aero Linux official theme — clean, modern, blue/white
+Comment[es]=Tema oficial de Aero Linux — limpio, moderno, azul/blanco
 Type=X-GNOME-Metatheme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Aero
 MetacityTheme=Aero
-IconTheme=Adwaita
-CursorTheme=Adwaita
+IconTheme=elementary
+CursorTheme=Bibata-Modern-Ice
 ButtonLayout=menu:minimize,maximize,close
