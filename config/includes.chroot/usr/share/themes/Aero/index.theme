@@ -9,6 +9,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=Aero
 MetacityTheme=Default
-IconTheme=elementary
+IconTheme=Papirus-Light
 CursorTheme=Bibata-Modern-Ice
 ButtonLayout=menu:minimize,maximize,close
