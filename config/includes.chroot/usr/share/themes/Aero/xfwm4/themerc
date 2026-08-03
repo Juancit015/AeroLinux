@@ -1,0 +1,26 @@
+# Aero Linux xfwm4 theme
+active_text_color=#ffffff
+inactive_text_color=#333333
+title_active_color=#3C6EB4
+title_inactive_color=#B0B0B0
+button_active_color=#2C4E82
+button_inactive_color=#909090
+
+show_app_icon=true
+full_width_title=true
+title_horizontal_offset=4
+title_vertical_offset=0
+
+frame_border_top=1
+frame_border_bottom=1
+frame_border_left=1
+frame_border_right=1
+
+button_offset=2
+button_spacing=4
+
+button_layout=OM|SHMC
+
+active_background_color=#3c6eb4
+active_shadow_color=#2c4e82
+inactive_shadow_color=#b0b0b0

@@ -1,14 +1,14 @@
 [Desktop Entry]
-Type=X11/BMP
 Name=Aero
 Name[es]=Aero
-Comment=Aero Linux GTK Theme
-Comment[es]=Tema GTK de Aero Linux
+Comment=Aero Linux Theme
+Comment[es]=Tema de Aero Linux
+Type=X-GNOME-Metatheme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=Aero
 MetacityTheme=Aero
-IconTheme=Aero
+IconTheme=Adwaita
 CursorTheme=Adwaita
 ButtonLayout=menu:minimize,maximize,close

@@ -3,217 +3,205 @@
 @define-color aero_blue_dark #2C4E82;
 @define-color aero_white #FFFFFF;
 @define-color aero_gray_light #F5F5F5;
-@define-color aero_gray #E8E8E8;
+@define-color aero_gray #E0E0E0;
+@define-color aero_gray_dark #B0B0B0;
 @define-color aero_text #333333;
-@define-color aero_text_light #FFFFFF;
+@define-color accent_color #3C6EB4;
+@define-color destructive_color #cc0000;
+@define-color success_color #4e9a06;
+@define-color warning_color #f57900;
 
-* {
-    background-image: none;
-    box-shadow: none;
-    text-shadow: none;
-    outline-color: transparent;
-}
+* { -gtk-icon-shadow: none; -gtk-icon-effect: none; text-shadow: none; box-shadow: none; outline-color: transparent; }
+*:disabled { opacity: 0.4; }
 
-.window-frame, .window {
-    border-radius: 8px;
-    background-color: @aero_white;
-}
+/* Ventanas / contenedores principales */
+window, .window { background-color: @aero_white; color: @aero_text; }
+.background { background-color: @aero_white; color: @aero_text; }
+.background:backdrop { background-color: @aero_gray_light; color: @aero_text; }
 
-headerbar, .titlebar, .toolbar {
+/* Scroll */
+scrollbar, .scrollbar { min-width: 9px; min-height: 9px; padding: 0; border-radius: 0; }
+scrollbar slider, .scrollbar slider { min-width: 9px; min-height: 32px; border-radius: 9999px; background-color: @aero_gray_dark; border: none; min-height: 40px; }
+scrollbar slider:hover, .scrollbar slider:hover { background-color: @aero_blue_light; }
+scrollbar slider:active, .scrollbar slider:active { background-color: @aero_blue; }
+
+/* Botones */
+button, .button {
     background-color: @aero_blue;
-    color: @aero_text_light;
-    border-radius: 8px 8px 0 0;
-    padding: 6px 10px;
-}
-
-headerbar label, .titlebar label {
-    color: @aero_text_light;
-    font-weight: bold;
-}
-
-button {
-    background-color: @aero_blue;
-    color: @aero_text_light;
+    color: @aero_white;
     border-radius: 6px;
     border: none;
-    padding: 6px 14px;
+    padding: 6px 12px;
     min-height: 28px;
-    transition: background-color 150ms ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    transition: all 150ms ease;
 }
+button:hover, .button:hover { background-color: @aero_blue_light; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+button:active, button:checked, .button:active, .button:checked { background-color: @aero_blue_dark; }
+button.flat, .button.flat { background-color: transparent; color: @aero_text; border: 1px solid @aero_gray; }
+button.flat:hover, .button.flat:hover { background-color: @aero_gray_light; }
+button.suggestion-action, .button.suggestion-action { background-color: @aero_gray; color: @aero_text; }
+button.suggestion-action:hover, .button.suggestion-action:hover { background-color: @aero_gray; }
 
-button:hover {
-    background-color: @aero_blue_light;
+/* Diálogos */
+dialog, .dialog, .msgdialog { background-color: @aero_white; border-radius: 8px; }
+dialog .content_area, .dialog .content_area { background-color: @aero_white; }
+.titlebar, .titlebar, headerbar, .headerbar { background-color: @aero_blue; color: @aero_white; border: none; border-radius: 0; }
+.titlebarlabel, .titlebar label { color: @aero_white; font-weight: bold; }
+window titlebar, window .titlebar, headerbar, .headerbar { text-shadow: none; }
+
+/* Entradas de texto */
+entry, .entry, .entry:backdrop {
+    background-color: @aero_white; color: @aero_text;
+    border: 1px solid @aero_gray; border-radius: 6px;
+    padding: 4px 6px; box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
 }
+entry:focus, .entry:focus { border-color: @aero_blue; box-shadow: 0 0 0 2px alpha(@aero_blue,0.25); }
+entry.error, .entry.error { border-color: @destructive_color; box-shadow: 0 0 0 2px alpha(@destructive_color,0.25); }
+entry.warning, .entry:warning { border-color: @warning_color; box-shadow: 0 0 0 2px alpha(@warning_color,0.25); }
+spinbutton, .spinbutton { background-color: @aero_white; border: 1px solid @aero_gray; border-radius: 6px; }
 
-button:active, button:checked {
-    background-color: @aero_blue_dark;
+/* Notebooks / pestañas */
+notebook > notebook, notebook > header, .notebook > header {
+    background-color: @aero_gray_light; border: none;
 }
-
-button.flat, .button.flat {
-    background-color: transparent;
-    color: @aero_text;
-}
-
-button.flat:hover {
-    background-color: @aero_gray_light;
-}
-
-entry, .entry {
-    background-color: @aero_white;
-    color: @aero_text;
-    border: 1px solid @aero_gray;
-    border-radius: 6px;
-    padding: 5px 8px;
-}
-
-entry:focus, .entry:focus {
-    border-color: @aero_blue;
-}
-
-combobox, .combobox {
-    background-color: @aero_white;
-    border: 1px solid @aero_gray;
-    border-radius: 6px;
-}
-
-treeview, .treeview {
-    background-color: @aero_white;
-    color: @aero_text;
-}
-
-treeview:selected {
-    background-color: @aero_blue;
-    color: @aero_text_light;
-}
-
-notebook > header {
-    background-color: @aero_gray_light;
-}
-
-notebook > header tab {
-    background-color: @aero_gray_light;
-    color: @aero_text;
+notebook tab, .notebook tab, notebook tab:checked, .notebook tab:checked,
+notebook tab:checked:first-child, .notebook tab:checked:first-child,
+notebook tab:checked:last-child, .notebook tab:checked:last-child {
+    background-color: @aero_white; color: @aero_text;
     border-radius: 6px 6px 0 0;
-    padding: 5px 14px;
-}
-
-notebook > header tab:checked {
-    background-color: @aero_white;
-    color: @aero_blue;
+    border: 1px solid @aero_gray; border-bottom: none; padding: 4px 10px;
     font-weight: bold;
 }
+notebook tab:hover, .notebook tab:hover { background-color: @aero_gray_light; }
+notebook tab:checked ~ tab, .notebook tab:checked ~ tab { border-bottom: 2px solid @aero_white; }
+notebook scrolledwindow, .notebook scrolledwindow, notebook viewport, .notebook viewport,
+notebook notebook, .notebook notebook, notebook > stack, .notebook > stack { background-color: @aero_white; }
 
-menu, .menu, .popover {
-    background-color: @aero_white;
-    color: @aero_text;
-    border-radius: 6px;
-    padding: 4px;
+/* Notebooks (GtkNotebook) */
+notebook, .notebook { background-color: @aero_white; }
+notebook tab, .notebook tab { color: @aero_text; }
+
+/* Listas / árboles */
+treeview, .treeview, treeview.view, .treeview.view, listview text, .listview text {
+    background-color: @aero_white; color: @aero_text; -gtk-icon-shadow: none;
 }
+treeview:selected, .treeview:selected, treeview.view:selected, .treeview.view:selected { background-color: @aero_blue; color: @aero_white; }
+treeview:disabled, .treeview:disabled, treeview.view:disabled, .treeview.view:disabled { background-color: @aero_gray_light; color: alpha(@aero_text,0.5); }
+gridview, .gridview, flowbox, .flowbox { background-color: @aero_white; }
+flowboxchild, .flowboxchild { background: transparent; border: none; }
 
-menuitem, .menuitem {
-    color: @aero_text;
-    border-radius: 4px;
-    padding: 5px 10px;
+/* Popovers / menús */
+popover, .popover, menu, .menu {
+    background-color: @aero_white; color: @aero_text;
+    border-radius: 6px; border: 1px solid @aero_gray;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
-menuitem:hover, .menuitem:hover {
-    background-color: @aero_blue;
-    color: @aero_text_light;
+menuitem, .menuitem, .menu-item {
+    color: @aero_text; background: transparent;
+    padding: 4px 8px; border-radius: 4px;
 }
-
-scrolledwindow, .scrolledwindow {
-    background-color: @aero_white;
+menuitem:hover, .menuitem:hover, .menu-item:hover, menuitem:disabled, .menuitem:disabled {
+    background-color: @aero_blue; color: @aero_white;
 }
+.separator menuitem, .separator menuitem, menuitem.separator, .menuitem.separator,
+menu .separator, .menu .separator { background: transparent; }
+menu .separator, .menu .separator { min-height: 1px; min-width: 1px; background-color: @aero_gray; }
+.checkbutton menuitem, .checkbutton menuitem { min-height: 24px; }
 
-scrollbar, .scrollbar {
-    background-color: transparent;
-}
+/* Tooltips */
+tooltip, .tooltip { background-color: alpha(@aero_text,0.9); color: @aero_white; border-radius: 4px; padding: 4px 8px; }
 
-scrollbar slider, .scrollbar slider {
-    background-color: @aero_blue_light;
-    border-radius: 4px;
-    min-width: 6px;
-    min-height: 40px;
-}
+/* Barras de herramientas / Toolbars */
+toolbar, .toolbar { background-color: @aero_gray_light; color: @aero_text; border: none; padding: 4px; }
+.toolbar .button, .toolbar button { background: transparent; color: @aero_text; border: none; box-shadow: none; }
+.toolbar .togglebutton, .toolbar button.toggle { background: @aero_gray; }
 
-scrollbar slider:hover, .scrollbar slider:hover {
-    background-color: @aero_blue;
-}
-
-statusbar, .statusbar {
-    background-color: @aero_gray_light;
-    color: @aero_text;
-    border-top: 1px solid @aero_gray;
-    padding: 3px 8px;
-}
-
-separator, .separator {
-    background-color: @aero_gray;
-}
-
-tooltip, .tooltip {
-    background-color: @aero_text;
-    color: @aero_text_light;
-    border-radius: 4px;
-    padding: 4px 8px;
-}
-
+/* Progress bars */
 progressbar, .progressbar {
-    background-color: @aero_gray;
-    border-radius: 4px;
+    background-color: @aero_gray; border-radius: 4px; min-height: 8px; min-width: 64px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 }
-
-progressbar trough, .progressbar trough {
-    background-color: @aero_gray;
-    border-radius: 4px;
-}
-
 progressbar progress, .progressbar progress {
-    background-color: @aero_blue;
-    border-radius: 4px;
+    background-color: @aero_blue; border-radius: 4px; box-shadow: none;
 }
+progressbar text, .progressbar text { color: @aero_white; }
 
+/* Switches */
 switch, .switch {
-    background-color: @aero_gray;
-    border-radius: 10px;
+    background-color: @aero_gray_dark; border-radius: 12px; min-width: 40px; min-height: 22px;
 }
-
-switch:checked, .switch:checked {
-    background-color: @aero_blue;
-}
-
+switch:checked, .switch:checked { background-color: @aero_blue; }
 switch slider, .switch slider {
-    background-color: @aero_white;
-    border-radius: 50%;
+    background: @aero_white; border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    width: 18px; height: 18px; margin: 2px;
 }
+switch slider:checked, .switch slider:checked { margin: 2px; }
 
-check, radio {
-    background-color: @aero_white;
-    border: 1px solid @aero_gray;
-    border-radius: 3px;
+/* Check y Radio */
+check, .check, radio, .radio {
+    background-color: @aero_white; color: @aero_text;
+    border: 1px solid @aero_gray; border-radius: 3px;
 }
+check:checked, .check:checked, radio:checked, .radio:checked {
+    background-color: @aero_blue; border-color: @aero_blue; color: @aero_white;
+}
+check:indeterminate, .check:indeterminate { background-color: @aero_blue; }
+check check, check label, .check check, .check label,
+radio radio, radio label, .radio radio, .radio label { background: transparent; }
 
-check:checked, radio:checked {
-    background-color: @aero_blue;
-    border-color: @aero_blue;
-}
+/* Notebooks GtkNotebook tabs */
+notebook tab, .notebook tab { min-height: 24px; }
 
-dialog, .dialog {
-    background-color: @aero_white;
-    border-radius: 10px;
-}
+/* Paned / divisores */
+paned, .paned { background-color: @aero_gray; }
+separator, .separator { background-color: @aero_gray; }
+separator:horizontal, .separator:horizontal { min-height: 1px; }
+separator:vertical, .separator:vertical { min-width: 1px; }
 
-label {
-    color: @aero_text;
-}
+/* Frame */
+frame, .frame { background-color: alpha(@aero_gray_light,0.5); border: 1px solid @aero_gray; border-radius: 6px; }
+.frame .child, .frame .child { background-color: @aero_white; }
 
-.view, .view:hover {
-    background-color: @aero_white;
-    color: @aero_text;
-}
+/* Info bar / barra de estado */
+infobar, .infobar { background-color: @aero_gray_light; color: @aero_text; border: none; }
+infobar:notification, .infobar:notification { background-color: alpha(@aero_blue,0.12); }
+infobar:error, .infobar:error { background-color: alpha(@destructive_color,0.12); }
+infobar:question, .infobar:question { background-color: alpha(@success_color,0.12); }
+infobar:warning, .infobar:warning { background-color: alpha(@warning_color,0.12); }
 
-frame, .frame {
-    border: 1px solid @aero_gray;
-    border-radius: 6px;
-    background-color: @aero_white;
+/* Labels */
+label, .label { color: @aero_text; }
+.label:error { color: @destructive_color; }
+.label:warning { color: @warning_color; }
+
+/* Viewports / text views */
+textview, .textview, textview text, .textview text {
+    background-color: @aero_white; color: @aero_text;
 }
+textview text:selection, .textview text:selection { background-color: @aero_blue; color: @aero_white; }
+
+/* Status bar / statusbar */
+statusbar, .statusbar { background-color: @aero_gray_light; border-top: 1px solid @aero_gray; color: @aero_text; padding: 3px 8px; }
+
+/* About dialogs */
+.about dialog, .aboutdialog { background-color: @aero_white; }
+.about .sidebar, .aboutdialog .sidebar, .about treeview, .aboutdialog treeview { background-color: @aero_gray_light; }
+
+/* App flow / placename */
+.placename, .title { color: @aero_text; font-weight: bold; }
+
+/* Notebook */
+notebook widget:not(header) notebook tab { border-radius: 0; }
+
+/* Search entry */
+searchentry, .searchentry { background-color: @aero_white; border: 1px solid @aero_gray; border-radius: 6px; padding: 4px 22px 4px 6px; }
+
+/* ComboBox */
+combobox, .combobox, comboboxentry, .comboboxentry, optionmenu, .optionmenu {
+    background-color: @aero_white; border: 1px solid @aero_gray; border-radius: 6px;
+}
+combobox entry, .combobox entry { background-color: @aero_white; border: none; }
+combobox button, .combobox button { background: transparent; border: none; min-width: 16px; }
+```
