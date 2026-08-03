@@ -26,17 +26,17 @@ Fase 2: Identidad Visual
 -------------------------
 Estado: Completada
 
-- Tema GTK "Aero" creado desde cero (GTK3) con paleta azul/blanco (#3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
-- Menus con diseno heredado de Adwaita-dark (padding compacto, hover azul oscuro, menubar con subrayado)
-- CSS del tema para XFCE (panel, whisker, widgets)
-- Wallpapers oficiales en /usr/share/backgrounds/aero (estilo Fluent: edificios y montanas)
-- Iconos: elementary (por defecto)
-- Tema de ventanas: Default (xfwm4)
-- Configuracion base de XFCE aplicada por defecto via /etc/skel (settings.ini + xsettings.xml)
+ - Tema GTK "Aero" creado desde cero (GTK3) con paleta azul/blanco (#3C6EB4, #51A2DA, #FFFFFF, #F5F5F5, #333333)
+ - Menus con diseno heredado de Adwaita-dark (padding compacto, hover azul oscuro, menubar con subrayado)
+ - CSS del tema para XFCE (panel, whisker, widgets)
+ - Wallpapers oficiales en /usr/share/backgrounds/aero (estilo Fluent: edificios y montanas)
+ - Iconos: elementary (por defecto)
+ - Cursor: Bibata-Modern-Ice (blanco, moderno) ✅
+ - Tema de ventanas: Default (xfwm4)
+ - Configuracion base de XFCE aplicada por defecto via /etc/skel (settings.ini + xsettings.xml + cursor)
 
 Pendiente (opcional, fases futuras):
-- Iconos propios estilo Aero
-- Cursor personalizado
+ - Iconos propios estilo Aero
 
 Fase 3: Calamares - Instalador Grafico
 ----------------------------------------
