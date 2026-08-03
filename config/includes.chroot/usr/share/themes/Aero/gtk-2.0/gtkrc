@@ -1,0 +1,34 @@
+style "aero-widgets" {
+    bg[NORMAL] = "#FFFFFF"
+    bg[SELECTED] = "#3C6EB4"
+    bg[INSENSITIVE] = "#F5F5F5"
+    bg[ACTIVE] = "#2C4E82"
+    fg[NORMAL] = "#333333"
+    fg[SELECTED] = "#FFFFFF"
+    fg[INSENSITIVE] = "#999999"
+    fg[ACTIVE] = "#FFFFFF"
+    base[NORMAL] = "#FFFFFF"
+    base[SELECTED] = "#3C6EB4"
+    base[INSENSITIVE] = "#F5F5F5"
+    text[NORMAL] = "#333333"
+    text[SELECTED] = "#FFFFFF"
+    text[INSENSITIVE] = "#999999"
+}
+
+style "aero-button" {
+    bg[NORMAL] = "#3C6EB4"
+    bg[PRELIGHT] = "#51A2DA"
+    bg[SELECTED] = "#2C4E82"
+    fg[NORMAL] = "#FFFFFF"
+    fg[PRELIGHT] = "#FFFFFF"
+    fg[SELECTED] = "#FFFFFF"
+}
+
+style "aero-toolbar" {
+    bg[NORMAL] = "#3C6EB4"
+    fg[NORMAL] = "#FFFFFF"
+}
+
+class "GtkWidget" style "aero-widgets"
+class "GtkButton" style "aero-button"
+class "GtkToolbar" style "aero-toolbar"

@@ -1,0 +1,76 @@
+@define-color aero_blue #3C6EB4;
+@define-color aero_blue_light #51A2DA;
+@define-color aero_blue_dark #2C4E82;
+@define-color aero_white #FFFFFF;
+@define-color aero_gray_light #F5F5F5;
+@define-color aero_gray #E8E8E8;
+@define-color aero_text #333333;
+@define-color aero_text_light #FFFFFF;
+
+window, .window {
+    background-color: @aero_white;
+}
+
+headerbar, .titlebar {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+}
+
+headerbar label, .titlebar label {
+    color: @aero_text_light;
+}
+
+button {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+    border-radius: 6px;
+    border: none;
+}
+
+button:hover {
+    background-color: @aero_blue_light;
+}
+
+button:active {
+    background-color: @aero_blue_dark;
+}
+
+entry {
+    background-color: @aero_white;
+    color: @aero_text;
+    border: 1px solid @aero_gray;
+    border-radius: 6px;
+}
+
+entry:focus {
+    border-color: @aero_blue;
+}
+
+treeview {
+    background-color: @aero_white;
+    color: @aero_text;
+}
+
+treeview:selected {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+}
+
+menu, .menu {
+    background-color: @aero_white;
+    color: @aero_text;
+}
+
+menuitem:hover {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+}
+
+tooltip {
+    background-color: @aero_text;
+    color: @aero_text_light;
+}
+
+label {
+    color: @aero_text;
+}

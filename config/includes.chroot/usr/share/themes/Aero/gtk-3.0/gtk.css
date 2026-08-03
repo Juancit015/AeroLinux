@@ -1,0 +1,219 @@
+@define-color aero_blue #3C6EB4;
+@define-color aero_blue_light #51A2DA;
+@define-color aero_blue_dark #2C4E82;
+@define-color aero_white #FFFFFF;
+@define-color aero_gray_light #F5F5F5;
+@define-color aero_gray #E8E8E8;
+@define-color aero_text #333333;
+@define-color aero_text_light #FFFFFF;
+
+* {
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    outline-color: transparent;
+}
+
+.window-frame, .window {
+    border-radius: 8px;
+    background-color: @aero_white;
+}
+
+headerbar, .titlebar, .toolbar {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+    border-radius: 8px 8px 0 0;
+    padding: 6px 10px;
+}
+
+headerbar label, .titlebar label {
+    color: @aero_text_light;
+    font-weight: bold;
+}
+
+button {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+    border-radius: 6px;
+    border: none;
+    padding: 6px 14px;
+    min-height: 28px;
+    transition: background-color 150ms ease;
+}
+
+button:hover {
+    background-color: @aero_blue_light;
+}
+
+button:active, button:checked {
+    background-color: @aero_blue_dark;
+}
+
+button.flat, .button.flat {
+    background-color: transparent;
+    color: @aero_text;
+}
+
+button.flat:hover {
+    background-color: @aero_gray_light;
+}
+
+entry, .entry {
+    background-color: @aero_white;
+    color: @aero_text;
+    border: 1px solid @aero_gray;
+    border-radius: 6px;
+    padding: 5px 8px;
+}
+
+entry:focus, .entry:focus {
+    border-color: @aero_blue;
+}
+
+combobox, .combobox {
+    background-color: @aero_white;
+    border: 1px solid @aero_gray;
+    border-radius: 6px;
+}
+
+treeview, .treeview {
+    background-color: @aero_white;
+    color: @aero_text;
+}
+
+treeview:selected {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+}
+
+notebook > header {
+    background-color: @aero_gray_light;
+}
+
+notebook > header tab {
+    background-color: @aero_gray_light;
+    color: @aero_text;
+    border-radius: 6px 6px 0 0;
+    padding: 5px 14px;
+}
+
+notebook > header tab:checked {
+    background-color: @aero_white;
+    color: @aero_blue;
+    font-weight: bold;
+}
+
+menu, .menu, .popover {
+    background-color: @aero_white;
+    color: @aero_text;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+menuitem, .menuitem {
+    color: @aero_text;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+menuitem:hover, .menuitem:hover {
+    background-color: @aero_blue;
+    color: @aero_text_light;
+}
+
+scrolledwindow, .scrolledwindow {
+    background-color: @aero_white;
+}
+
+scrollbar, .scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider, .scrollbar slider {
+    background-color: @aero_blue_light;
+    border-radius: 4px;
+    min-width: 6px;
+    min-height: 40px;
+}
+
+scrollbar slider:hover, .scrollbar slider:hover {
+    background-color: @aero_blue;
+}
+
+statusbar, .statusbar {
+    background-color: @aero_gray_light;
+    color: @aero_text;
+    border-top: 1px solid @aero_gray;
+    padding: 3px 8px;
+}
+
+separator, .separator {
+    background-color: @aero_gray;
+}
+
+tooltip, .tooltip {
+    background-color: @aero_text;
+    color: @aero_text_light;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+progressbar, .progressbar {
+    background-color: @aero_gray;
+    border-radius: 4px;
+}
+
+progressbar trough, .progressbar trough {
+    background-color: @aero_gray;
+    border-radius: 4px;
+}
+
+progressbar progress, .progressbar progress {
+    background-color: @aero_blue;
+    border-radius: 4px;
+}
+
+switch, .switch {
+    background-color: @aero_gray;
+    border-radius: 10px;
+}
+
+switch:checked, .switch:checked {
+    background-color: @aero_blue;
+}
+
+switch slider, .switch slider {
+    background-color: @aero_white;
+    border-radius: 50%;
+}
+
+check, radio {
+    background-color: @aero_white;
+    border: 1px solid @aero_gray;
+    border-radius: 3px;
+}
+
+check:checked, radio:checked {
+    background-color: @aero_blue;
+    border-color: @aero_blue;
+}
+
+dialog, .dialog {
+    background-color: @aero_white;
+    border-radius: 10px;
+}
+
+label {
+    color: @aero_text;
+}
+
+.view, .view:hover {
+    background-color: @aero_white;
+    color: @aero_text;
+}
+
+frame, .frame {
+    border: 1px solid @aero_gray;
+    border-radius: 6px;
+    background-color: @aero_white;
+}
